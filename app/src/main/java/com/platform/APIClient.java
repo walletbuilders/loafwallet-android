@@ -122,8 +122,6 @@ public class APIClient {
     private boolean platformUpdating = false;
     private AtomicInteger itemsLeftToUpdate = new AtomicInteger(0);
 
-    public static HTTPServer server;
-
     private Context ctx;
 
     public enum FeatureFlags {

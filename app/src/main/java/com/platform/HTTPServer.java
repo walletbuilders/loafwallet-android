@@ -67,9 +67,9 @@ public class HTTPServer {
     private static Set<Middleware> middlewares;
     private static Server server;
     public static final int PORT = 31120;
-    public static final String URL_EA = "http://localhost:" + PORT + "/ea";
-    public static final String URL_BUY = "http://localhost:" + PORT + "/buy";
-    public static final String URL_SUPPORT = "http://localhost:" + PORT + "/support";
+    public static final String URL_EA = "https://api.loafwallet.org" + "/ea";
+    public static final String URL_BUY = "https://api.loafwallet.org" + "/buy";
+    public static final String URL_SUPPORT = "https://api.loafwallet.org" + "/support";
     public static ServerMode mode;
 
     public enum ServerMode {
@@ -122,21 +122,6 @@ public class HTTPServer {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-    }
-
-    public static void stopServer() {
-        Log.d(TAG, "stopServer");
-        try {
-            if (server != null)
-                server.stop();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        server = null;
-    }
-
-    public boolean isStarted() {
-        return server != null && server.isStarted();
     }
 
     private static class ServerHandler extends AbstractHandler {

@@ -72,6 +72,8 @@ public class WebViewActivity extends BRActivity {
 
         theUrl = getIntent().getStringExtra("url");
         String json = getIntent().getStringExtra("json");
+        Log.d("Ebenezer", "json:" + json);
+        Log.d("Ebenezer", "url:" + theUrl);
         if (!setupServerMode(theUrl)) {
             webView.loadUrl(theUrl);
             return;
@@ -150,6 +152,7 @@ public class WebViewActivity extends BRActivity {
     }
 
     private boolean setupServerMode(String url) {
+        Log.d("Ebenezer", url);
         if (url.equalsIgnoreCase(HTTPServer.URL_BUY)) {
             HTTPServer.mode = HTTPServer.ServerMode.BUY;
         } else if (url.equalsIgnoreCase(HTTPServer.URL_SUPPORT)) {
