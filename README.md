@@ -29,7 +29,7 @@ Simplicity and ease-of-use is **Litewallet**'s core design principle. A simple r
 - import [password protected](https://github.com/bitcoin/bips/blob/master/bip-0038.mediawiki) paper wallets
 - ["payment protocol"](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki) payee identity certification
 
-### Building & Developing LoafWallet for Android:
+### Building & Developing Litewallet for Android:
 
 1. Download and install Java 7 or up
 2. Download and install the latest Android studio
