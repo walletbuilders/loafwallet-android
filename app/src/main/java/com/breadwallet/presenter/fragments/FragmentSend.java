@@ -435,22 +435,20 @@ public class FragmentSend extends Fragment {
                     return;
                 }
 
-                boolean allFilled = true;
-                String amountStr = BRConstants.DONATION_AMOUNT_BASE;
+                //TODO: leaving this for a dynamic donation mechanism will refactor method (getSatoshisFromAmount) then
                 String iso = selectedIso;
 
                 //get amount in satoshis from any isos
-                BigDecimal bigAmount = new BigDecimal(Utils.isNullOrEmpty(amountStr) ? "0" : amountStr);
-                BigDecimal satoshiAmount = BRExchange.getSatoshisFromAmount(getActivity(), iso, bigAmount);
+                BigDecimal bigAmount = new BigDecimal(BRConstants.DONATION_AMOUNT_BASE);
+                BigDecimal litoshiAmount = BRExchange.getSatoshisFromAmount(getActivity(), iso, bigAmount);
 
-                if (satoshiAmount.longValue() > BRWalletManager.getInstance().getBalance(getActivity())) {
+                if (litoshiAmount.longValue() > BRWalletManager.getInstance().getBalance(getActivity())) {
                      SpringAnimator.donationFailShakeAnimation(getActivity(), donateText);
                 }
 
-                if (allFilled)
-                    BRSender.getInstance().sendTransaction(getContext(),
+                BRSender.getInstance().sendTransaction(getContext(),
                             new PaymentItem(new String[]{BRConstants.DONATION_ADDRESS1},
-                                    null, satoshiAmount.longValue(),
+                                    null, litoshiAmount.longValue(),
                                     null,
                                     false, BRConstants.DONATION_MEMO));
             }
@@ -472,7 +470,6 @@ public class FragmentSend extends Fragment {
                     app.getFragmentManager().popBackStack();
             }
         });
-
 
         addressEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
