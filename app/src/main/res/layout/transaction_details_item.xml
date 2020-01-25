@@ -125,7 +125,7 @@
                     android:textColor="@color/almost_black"
                     android:textIsSelectable="false"
                     android:textSize="16sp"
-                    app:customTFont="CircularPro-Book.otf"
+                    app:customTFont="BarlowSemiCondensed-Medium.ttf"
                     />
 
                 <View

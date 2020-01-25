@@ -57,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
                         android:textSize="30sp"
-                        app:customTFont="CircularPro-Book.otf"
+                        app:customTFont="BarlowSemiCondensed-Medium.ttf"
                         tools:ignore="MissingConstraints"
                         tools:text="$1000.00" />
 
@@ -68,7 +68,7 @@
                         android:text="="
                         android:textColor="@color/white"
                         android:textSize="14sp"
-                        app:customTFont="CircularPro-Book.otf"
+                        app:customTFont="BarlowSemiCondensed-Medium.ttf"
                         tools:ignore="MissingConstraints" />
 
                     <com.breadwallet.presenter.customviews.BRText
@@ -78,7 +78,7 @@
                         android:gravity="left"
                         android:textColor="@color/white"
                         android:textSize="16sp"
-                        app:customTFont="CircularPro-Book.otf"
+                        app:customTFont="BarlowSemiCondensed-Medium.ttf"
                         tools:ignore="MissingConstraints"
                         tools:text="L100" />
 
@@ -88,7 +88,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
                         android:textSize="16sp"
-                        app:customTFont="CircularPro-Book.otf"
+                        app:customTFont="BarlowSemiCondensed-Medium.ttf"
                         app:layout_constraintLeft_toLeftOf="@+id/primary_price"
                         app:layout_constraintTop_toBottomOf="@+id/primary_price" />
 
@@ -228,7 +228,7 @@
         android:text="@string/TransactionDetails.emptyMessage"
         android:textColor="@color/light_gray"
         android:textSize="18sp"
-        app:customTFont="CircularPro-Book.otf"
+        app:customTFont="BarlowSemiCondensed-Medium.ttf"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"

@@ -28,7 +28,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:textSize="@dimen/paragraph"
-            app:customTFont="CircularPro-Book.otf"
+            app:customTFont="BarlowSemiCondensed-Medium.ttf"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/syncing_label"
             app:layout_constraintTop_toBottomOf="@+id/sync_progress" />

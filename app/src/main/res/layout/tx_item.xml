@@ -24,7 +24,7 @@
             android:layout_marginTop="16dp"
             android:text="Sent"
             android:textColor="@color/almost_black"
-            app:customTFont="CircularPro-Book.otf"
+            app:customTFont="BarlowSemiCondensed-Medium.ttf"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -50,7 +50,7 @@
             android:layout_marginTop="8dp"
             android:text="to"
             android:textColor="@color/almost_black"
-            app:customTFont="CircularPro-Book.otf"
+            app:customTFont="BarlowSemiCondensed-Medum.ttf"
             app:layout_constraintLeft_toLeftOf="@+id/sent_received"
             app:layout_constraintTop_toBottomOf="@+id/sent_received"/>
 
@@ -83,7 +83,7 @@
             android:layout_marginTop="8dp"
             android:text="Completed"
             android:textColor="@color/almost_black"
-            app:customTFont="CircularPro-Book.otf"
+            app:customTFont="BarlowSemiCondensed-Medium.ttf"
             app:layout_constraintLeft_toLeftOf="@+id/sent_received"
             app:layout_constraintTop_toBottomOf="@+id/comment"
             />
@@ -123,7 +123,7 @@
             android:layout_marginTop="8dp"
             android:text="For Love"
             android:textColor="@color/almost_black"
-            app:customTFont="CircularPro-Book.otf"
+            app:customTFont="BarlowSemiCondensed-Medium.ttf"
             app:layout_constraintLeft_toLeftOf="@+id/sent_received"
             app:layout_constraintTop_toBottomOf="@+id/to_from"/>
 
