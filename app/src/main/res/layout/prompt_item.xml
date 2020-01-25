@@ -29,7 +29,7 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/almost_black"
             android:textSize="@dimen/sub_header"
-            app:customTFont="CircularPro-Bold.otf"
+            app:customTFont="BarlowSemiCondensed-Bold.ttf"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
