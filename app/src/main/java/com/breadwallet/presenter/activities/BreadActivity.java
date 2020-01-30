@@ -47,6 +47,7 @@ import com.breadwallet.tools.util.BRExchange;
 import com.breadwallet.tools.util.Utils;
 import com.breadwallet.wallet.BRPeerManager;
 import com.breadwallet.wallet.BRWalletManager;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.platform.APIClient;
 
 import java.math.BigDecimal;
@@ -208,6 +209,11 @@ public class BreadActivity extends BRActivity implements BRWalletManager.OnBalan
             public void onClick(View v) {
                 if (!BRAnimator.isClickAllowed()) return;
                 BRAnimator.showReceiveFragment(BreadActivity.this, true);
+
+
+                Throwable t = new Throwable("This is a crash");
+
+                FirebaseCrashlytics.getInstance().recordException(t);
             }
         });
         //TODO: Add back when server can handle the buy
@@ -224,6 +230,9 @@ public class BreadActivity extends BRActivity implements BRWalletManager.OnBalan
             public void onClick(View v) {
                 if (!BRAnimator.isClickAllowed()) return;
                 //start the server for Buy Bitcoin
+                Throwable t = new Throwable("This is a crash");
+                FirebaseCrashlytics.getInstance().recordException(t);
+
                 BRAnimator.showMenuFragment(BreadActivity.this);
 
             }

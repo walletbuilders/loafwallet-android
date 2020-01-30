@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'com.google.gms.google-services'
-
 apply plugin: 'com.google.firebase.crashlytics'
 
 android {
@@ -19,8 +17,8 @@ android {
         applicationId = 'com.loafwallet'
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 290
-        versionName "v1.18.0"
+        versionCode 100
+        versionName "v1.18.1"
         multiDexEnabled true
 
         // Similar to other properties in the defaultConfig block,
