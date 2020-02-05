@@ -193,4 +193,8 @@ dependencies {
 
     // Firebase Crashlytics NDK
     implementation 'com.google.firebase:firebase-crashlytics-ndk:17.0.0-beta01'
+
+    // Mixpanel
+    implementation 'com.mixpanel.android:mixpanel-android:5.+'
+
 }

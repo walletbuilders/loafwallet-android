@@ -73,3 +73,6 @@ crash.txt
 /app/src/main/java/com/breadwallet/presenter/fragments/FragmentBreadSignal.java
 /fastlane/
 fastlane/
+
+#mixpanel
+mixpanel.json
