@@ -18,9 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import com.mixpanel.android.mpmetrics.MixpanelAPI;
+import java.util.concurrent.atomic.AtomicInteger; 
 
 /**
  * BreadWallet
@@ -73,9 +71,6 @@ public class BreadApp extends Application {
         }
 
         FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(enableCrashlytics);
-
-        public static final String MIXPANEL_TOKEN = ""
-
 
         WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
