@@ -45,9 +45,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * THE SOFTWARE.
  */
 
-
-//https://stackoverflow.com/questions/14514579/how-to-implement-rate-it-feature-in-android-app
-//https://github.com/stepstone-tech/android-material-app-rating
 public class BreadApp extends Application {
     private static final String TAG = BreadApp.class.getName();
     public static int DISPLAY_HEIGHT_PX;
