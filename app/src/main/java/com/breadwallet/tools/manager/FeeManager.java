@@ -1,11 +1,8 @@
 package com.breadwallet.tools.manager;
 
-import android.content.Context;
-
 import androidx.annotation.StringDef;
 
 import com.breadwallet.presenter.entities.Fee;
-import com.breadwallet.tools.util.CustomEvent;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.lang.annotation.Retention;
@@ -31,8 +28,6 @@ public final class FeeManager {
 
     private String feeType;
     private Fee currentFees;
-    private FirebaseAnalytics mFirebaseAnalytics;
-    private Context context;
 
     public static FeeManager getInstance() {
         return instance;
