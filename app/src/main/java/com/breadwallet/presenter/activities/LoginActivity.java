@@ -30,6 +30,7 @@ import com.breadwallet.presenter.interfaces.BRAuthCompletion;
 import com.breadwallet.tools.animation.BRAnimator;
 import com.breadwallet.tools.animation.BRDialog;
 import com.breadwallet.tools.animation.SpringAnimator;
+import com.breadwallet.tools.manager.AnalyticsManager;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.breadwallet.tools.manager.BRSharedPrefs;
 import com.breadwallet.tools.security.AuthManager;
@@ -73,7 +74,6 @@ public class LoginActivity extends BRActivity {
 
     private Button leftButton;
     private Button rightButton;
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     public static LoginActivity getApp() {
         return app;
@@ -124,8 +124,6 @@ public class LoginActivity extends BRActivity {
 
         leftButton = (Button) findViewById(R.id.left_button);
         rightButton = (Button) findViewById(R.id.right_button);
-
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         PackageInfo pInfo = null;
         try {
@@ -197,7 +195,7 @@ public class LoginActivity extends BRActivity {
                         public void onComplete() {
 //                            AuthManager.getInstance().authSuccess(LoginActivity.this);
                             unlockWallet();
-                            mFirebaseAnalytics.logEvent(CustomEvent._20200217_DLWB.toString(), null);
+                            AnalyticsManager.logCustomEvent(CustomEvent._20200217_DLWB);
                         }
 
                         @Override
@@ -333,7 +331,7 @@ public class LoginActivity extends BRActivity {
                         if (AuthManager.getInstance().checkAuth(pin.toString(), LoginActivity.this)) {
                             AuthManager.getInstance().authSuccess(LoginActivity.this);
                             unlockWallet();
-                            mFirebaseAnalytics.logEvent(CustomEvent._20200217_DLWP.toString(), null);
+                            AnalyticsManager.logCustomEvent(CustomEvent._20200217_DLWP);
                         } else {
                             AuthManager.getInstance().authFail(LoginActivity.this);
                             showFailedToUnlock();

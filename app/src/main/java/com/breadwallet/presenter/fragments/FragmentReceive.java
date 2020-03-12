@@ -24,6 +24,7 @@ import com.breadwallet.presenter.customviews.BRKeyboard;
 import com.breadwallet.presenter.customviews.BRLinearLayoutWithCaret;
 import com.breadwallet.tools.animation.BRAnimator;
 import com.breadwallet.tools.animation.SlideDetector;
+import com.breadwallet.tools.manager.AnalyticsManager;
 import com.breadwallet.tools.manager.BRClipboardManager;
 import com.breadwallet.tools.manager.BRSharedPrefs;
 import com.breadwallet.tools.qrcode.QRUtils;
@@ -85,7 +86,6 @@ public class FragmentReceive extends Fragment {
     private Handler copyCloseHandler = new Handler();
     private BRKeyboard keyboard;
     private View separator2;
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -111,7 +111,6 @@ public class FragmentReceive extends Fragment {
         close = (ImageButton) rootView.findViewById(R.id.close_button);
         separator2 = rootView.findViewById(R.id.separator2);
         separator2.setVisibility(View.GONE);
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
 
         setListeners();
         BRWalletManager.getInstance().addBalanceChangedListener(new BRWalletManager.OnBalanceChanged() {
@@ -132,7 +131,7 @@ public class FragmentReceive extends Fragment {
 
         signalLayout.setOnTouchListener(new SlideDetector(getContext(), signalLayout));
 
-        mFirebaseAnalytics.logEvent(CustomEvent._20202116_VRC.toString(), null);
+        AnalyticsManager.logCustomEvent(CustomEvent._20202116_VRC);
 
         return rootView;
     }

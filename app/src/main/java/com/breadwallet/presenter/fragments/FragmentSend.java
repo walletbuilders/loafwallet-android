@@ -43,6 +43,7 @@ import com.breadwallet.tools.animation.BRAnimator;
 import com.breadwallet.tools.animation.BRDialog;
 import com.breadwallet.tools.animation.SlideDetector;
 import com.breadwallet.tools.animation.SpringAnimator;
+import com.breadwallet.tools.manager.AnalyticsManager;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.breadwallet.tools.manager.BRClipboardManager;
 import com.breadwallet.tools.manager.BRSharedPrefs;
@@ -124,7 +125,6 @@ public class FragmentSend extends Fragment {
     private static String savedAmount;
 
     private boolean ignoreCleanup;
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -166,6 +166,8 @@ public class FragmentSend extends Fragment {
 
         signalLayout.setOnTouchListener(new SlideDetector(getContext(), signalLayout));
 
+        AnalyticsManager.logCustomEvent(CustomEvent._20191105_VSC);
+
         setupFeesSelector(rootView);
 
         showFeeSelectionButtons(feeButtonsShown);
@@ -185,7 +187,6 @@ public class FragmentSend extends Fragment {
         showKeyboard(false);
 
         signalLayout.setLayoutTransition(BRAnimator.getDefaultTransition());
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
 
         return rootView;
     }
@@ -457,7 +458,7 @@ public class FragmentSend extends Fragment {
 
                 if (allFilled) {
                     BRSender.getInstance().sendTransaction(getContext(), new PaymentItem(new String[]{address}, null, satoshiAmount.longValue(), null, false, comment));
-                    mFirebaseAnalytics.logEvent(CustomEvent._20191105_DSL.toString(), null);
+                    AnalyticsManager.logCustomEvent(CustomEvent._20191105_DSL);
                 }
             }
         });

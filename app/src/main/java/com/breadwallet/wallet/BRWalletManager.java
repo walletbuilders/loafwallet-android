@@ -37,6 +37,7 @@ import com.breadwallet.presenter.interfaces.BROnSignalCompletion;
 import com.breadwallet.tools.animation.BRAnimator;
 import com.breadwallet.tools.animation.BRDialog;
 import com.breadwallet.tools.animation.SpringAnimator;
+import com.breadwallet.tools.manager.AnalyticsManager;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.breadwallet.tools.manager.BRNotificationManager;
 import com.breadwallet.tools.manager.BRReportsManager;
@@ -96,7 +97,6 @@ public class BRWalletManager {
     private static BRWalletManager instance;
     public List<OnBalanceChanged> balanceListeners;
     private boolean itInitiatingWallet;
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     public void setBalance(final Context context, long balance) {
         if (context == null) {
@@ -505,12 +505,12 @@ public class BRWalletManager {
     public void initWallet(final Context ctx) {
         if (ActivityUTILS.isMainThread()) throw new NetworkOnMainThreadException();
         if (itInitiatingWallet) {
-            mFirebaseAnalytics.logEvent(CustomEvent._20200111_WNI.toString(), null);
+            AnalyticsManager.logCustomEvent(CustomEvent._20200111_WNI);
             return;
         }
 
         itInitiatingWallet = true;
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(ctx);
+
         try {
             Log.d(TAG, "initWallet:" + Thread.currentThread().getName());
             if (ctx == null) {

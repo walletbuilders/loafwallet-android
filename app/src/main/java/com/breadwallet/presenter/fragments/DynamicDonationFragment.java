@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 
 import com.breadwallet.R;
 import com.breadwallet.presenter.entities.PaymentItem;
+import com.breadwallet.tools.manager.AnalyticsManager;
 import com.breadwallet.tools.manager.BRSharedPrefs;
 import com.breadwallet.tools.manager.FeeManager;
 import com.breadwallet.tools.security.BRSender;
@@ -27,7 +28,6 @@ import com.breadwallet.tools.util.BRCurrency;
 import com.breadwallet.tools.util.BRExchange;
 import com.breadwallet.tools.util.CustomEvent;
 import com.breadwallet.wallet.BRWalletManager;
-import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.math.BigDecimal;
 
@@ -55,7 +55,6 @@ public class DynamicDonationFragment extends Fragment {
     private boolean isLTCSwap = true;
     private Pair<String, String> chosenAddress;
     private long mDonationAmount;
-    private FirebaseAnalytics mFirebaseAnalytics;
 
 
     @Nullable
@@ -73,7 +72,6 @@ public class DynamicDonationFragment extends Fragment {
 
         chosenAddress = BRConstants.DONATION_ADDRESSES[0];
         addressVal.setText(chosenAddress.second);
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
 
         Spinner spinner = view.findViewById(R.id.spinnerAddresses);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -103,7 +101,7 @@ public class DynamicDonationFragment extends Fragment {
         cancelBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mFirebaseAnalytics.logEvent(CustomEvent._20200225_DCD.toString(),null);
+                AnalyticsManager.logCustomEvent(CustomEvent._20200225_DCD);
                 getActivity().onBackPressed();
             }
         });
@@ -120,7 +118,8 @@ public class DynamicDonationFragment extends Fragment {
                 params.putString("DONATION_ACCOUNT", memo);
                 params.putLong("DONATION_AMOUNT", mDonationAmount);
 
-                mFirebaseAnalytics.logEvent(CustomEvent._20200223_DD.toString(), params);
+                AnalyticsManager.logCustomEvent(CustomEvent._20200223_DD);
+
                 BRSender.getInstance().sendTransaction(getContext(), request);
             }
         });
@@ -180,7 +179,7 @@ public class DynamicDonationFragment extends Fragment {
         FeeManager feeManager = FeeManager.getInstance();
 
         //TODO: This should be inserted into the FeeManager after v0.4.0
-        mFirebaseAnalytics.logEvent(CustomEvent._20200301_DUDFPK.toString(), null);
+        AnalyticsManager.logCustomEvent(CustomEvent._20200301_DUDFPK);
 
         feeManager.resetFeeType();
         BRWalletManager.getInstance().setFeePerKb(feeManager.getFees().regular);
