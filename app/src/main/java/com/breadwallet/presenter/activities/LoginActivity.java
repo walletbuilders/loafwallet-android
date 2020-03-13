@@ -31,13 +31,11 @@ import com.breadwallet.tools.animation.BRAnimator;
 import com.breadwallet.tools.animation.BRDialog;
 import com.breadwallet.tools.animation.SpringAnimator;
 import com.breadwallet.tools.manager.AnalyticsManager;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.breadwallet.tools.manager.BRSharedPrefs;
 import com.breadwallet.tools.security.AuthManager;
 import com.breadwallet.tools.security.BRKeyStore;
 import com.breadwallet.tools.threads.BRExecutor;
 import com.breadwallet.tools.util.BRConstants;
-import com.breadwallet.tools.util.CustomEvent;
 import com.breadwallet.tools.util.Utils;
 import com.breadwallet.wallet.BRWalletManager;
 import com.platform.APIClient;
@@ -195,7 +193,7 @@ public class LoginActivity extends BRActivity {
                         public void onComplete() {
 //                            AuthManager.getInstance().authSuccess(LoginActivity.this);
                             unlockWallet();
-                            AnalyticsManager.logCustomEvent(CustomEvent._20200217_DLWB);
+                            AnalyticsManager.logCustomEvent(BRConstants._20200217_DLWB);
                         }
 
                         @Override
@@ -331,7 +329,7 @@ public class LoginActivity extends BRActivity {
                         if (AuthManager.getInstance().checkAuth(pin.toString(), LoginActivity.this)) {
                             AuthManager.getInstance().authSuccess(LoginActivity.this);
                             unlockWallet();
-                            AnalyticsManager.logCustomEvent(CustomEvent._20200217_DLWP);
+                            AnalyticsManager.logCustomEvent(BRConstants._20200217_DLWP);
                         } else {
                             AuthManager.getInstance().authFail(LoginActivity.this);
                             showFailedToUnlock();

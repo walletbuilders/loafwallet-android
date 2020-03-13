@@ -53,7 +53,6 @@ import com.breadwallet.tools.util.BRConstants;
 import com.breadwallet.tools.util.BRCurrency;
 import com.breadwallet.tools.util.BRExchange;
 import com.breadwallet.tools.util.Bip39Reader;
-import com.breadwallet.tools.util.CustomEvent;
 import com.breadwallet.tools.util.TypesConverter;
 import com.breadwallet.tools.util.Utils;
 import com.platform.entities.WalletInfo;
@@ -505,7 +504,7 @@ public class BRWalletManager {
     public void initWallet(final Context ctx) {
         if (ActivityUTILS.isMainThread()) throw new NetworkOnMainThreadException();
         if (itInitiatingWallet) {
-            AnalyticsManager.logCustomEvent(CustomEvent._20200111_WNI);
+            AnalyticsManager.logCustomEvent(BRConstants._20200111_WNI);
             return;
         }
 

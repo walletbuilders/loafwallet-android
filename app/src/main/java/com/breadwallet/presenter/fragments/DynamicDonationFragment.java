@@ -26,7 +26,6 @@ import com.breadwallet.tools.security.BRSender;
 import com.breadwallet.tools.util.BRConstants;
 import com.breadwallet.tools.util.BRCurrency;
 import com.breadwallet.tools.util.BRExchange;
-import com.breadwallet.tools.util.CustomEvent;
 import com.breadwallet.wallet.BRWalletManager;
 
 import java.math.BigDecimal;
@@ -101,7 +100,8 @@ public class DynamicDonationFragment extends Fragment {
         cancelBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AnalyticsManager.logCustomEvent(CustomEvent._20200225_DCD);
+                AnalyticsManager.logCustomEvent(BRConstants._20200225_DCD);
+
                 getActivity().onBackPressed();
             }
         });
@@ -118,7 +118,7 @@ public class DynamicDonationFragment extends Fragment {
                 params.putString("DONATION_ACCOUNT", memo);
                 params.putLong("DONATION_AMOUNT", mDonationAmount);
 
-                AnalyticsManager.logCustomEvent(CustomEvent._20200223_DD);
+                AnalyticsManager.logCustomEventWithParams(BRConstants._20200223_DD, params);
 
                 BRSender.getInstance().sendTransaction(getContext(), request);
             }
@@ -179,7 +179,7 @@ public class DynamicDonationFragment extends Fragment {
         FeeManager feeManager = FeeManager.getInstance();
 
         //TODO: This should be inserted into the FeeManager after v0.4.0
-        AnalyticsManager.logCustomEvent(CustomEvent._20200301_DUDFPK);
+        AnalyticsManager.logCustomEvent(BRConstants._20200301_DUDFPK);
 
         feeManager.resetFeeType();
         BRWalletManager.getInstance().setFeePerKb(feeManager.getFees().regular);

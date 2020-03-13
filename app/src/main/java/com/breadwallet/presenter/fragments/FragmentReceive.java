@@ -6,7 +6,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,14 +29,11 @@ import com.breadwallet.tools.manager.BRSharedPrefs;
 import com.breadwallet.tools.qrcode.QRUtils;
 import com.breadwallet.tools.threads.BRExecutor;
 import com.breadwallet.tools.util.BRConstants;
-import com.breadwallet.tools.util.CustomEvent;
 import com.breadwallet.tools.util.Utils;
 import com.breadwallet.wallet.BRWalletManager;
-import com.google.firebase.analytics.FirebaseAnalytics;
 
 import static com.breadwallet.tools.animation.BRAnimator.animateBackgroundDim;
 import static com.breadwallet.tools.animation.BRAnimator.animateSignalSlide;
-import static com.platform.HTTPServer.URL_SUPPORT;
 
 /**
  * BreadWallet
@@ -131,7 +127,7 @@ public class FragmentReceive extends Fragment {
 
         signalLayout.setOnTouchListener(new SlideDetector(getContext(), signalLayout));
 
-        AnalyticsManager.logCustomEvent(CustomEvent._20202116_VRC);
+        AnalyticsManager.logCustomEvent(BRConstants._20202116_VRC);
 
         return rootView;
     }

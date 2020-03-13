@@ -44,7 +44,6 @@ import com.breadwallet.tools.animation.BRDialog;
 import com.breadwallet.tools.animation.SlideDetector;
 import com.breadwallet.tools.animation.SpringAnimator;
 import com.breadwallet.tools.manager.AnalyticsManager;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.breadwallet.tools.manager.BRClipboardManager;
 import com.breadwallet.tools.manager.BRSharedPrefs;
 import com.breadwallet.tools.manager.FeeManager;
@@ -55,7 +54,6 @@ import com.breadwallet.tools.threads.BRExecutor;
 import com.breadwallet.tools.util.BRConstants;
 import com.breadwallet.tools.util.BRCurrency;
 import com.breadwallet.tools.util.BRExchange;
-import com.breadwallet.tools.util.CustomEvent;
 import com.breadwallet.tools.util.Utils;
 import com.breadwallet.wallet.BRWalletManager;
 
@@ -166,7 +164,7 @@ public class FragmentSend extends Fragment {
 
         signalLayout.setOnTouchListener(new SlideDetector(getContext(), signalLayout));
 
-        AnalyticsManager.logCustomEvent(CustomEvent._20191105_VSC);
+        AnalyticsManager.logCustomEvent(BRConstants._20191105_VSC);
 
         setupFeesSelector(rootView);
 
@@ -458,7 +456,7 @@ public class FragmentSend extends Fragment {
 
                 if (allFilled) {
                     BRSender.getInstance().sendTransaction(getContext(), new PaymentItem(new String[]{address}, null, satoshiAmount.longValue(), null, false, comment));
-                    AnalyticsManager.logCustomEvent(CustomEvent._20191105_DSL);
+                    AnalyticsManager.logCustomEvent(BRConstants._20191105_DSL);
                 }
             }
         });
