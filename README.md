@@ -6,8 +6,6 @@
 ## Easy and secure
 Litewallet is the best way to get started with Litecoin. Our simple, streamlined design is easy for beginners, yet powerful enough for experienced users. This is a free app produced by the Litecoin Foundation.
 
-Android Users can visit the Android version of the code here: [Litewallet Android](https://github.com/litecoin-foundation/loafwallet-android) 
-
 ## Donations
 The Litewallet Team is a group of global volunteers part of the Litecoin Foundation that work hard to promote the use of Litecoin. Litewallet takes alot of time and resources to improve and test features but we need your help.  Please consider donating to one of our addresses:
 |                                   Hardware Campaign                                   	|                              General Litecoin Foundation                              	|
