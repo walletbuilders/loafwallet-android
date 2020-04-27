@@ -1,9 +1,11 @@
-Litewallet for Android
-----------------------------------
+[![Litewallet](/images/header-android.png)](https://play.google.com/store/apps/details?id=com.loafwallet&hl=en_US)
+======================
 
-![Google Play Store](/images/icon-google-play.png)
+[![Release](https://img.shields.io/github/v/release/litecoin-foundation/loafwallet-android?style=plastic)](https://img.shields.io/github/v/release/litecoin-foundation/loafwallet-ios) 
+[![MIT License](https://img.shields.io/github/license/litecoin-foundation/loafwallet-android?style=plastic)](https://img.shields.io/github/license/litecoin-foundation/loafwallet-ios?style=plastic)
 
-[Download](https://play.google.com/store/apps/details?id=com.loafwallet&hl=en_US)
+[![GitHub issues](https://img.shields.io/github/issues/litecoin-foundation/loafwallet-ios?style=plastic)](https://github.com/litecoin-foundation/loafwallet-android/re-frame/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/litecoin-foundation/loafwallet-android?color=00ff00&style=plastic)](https://github.com/litecoin-foundation/loafwallet-ios/pulls)
 
 ### The easy and secure Litecoin wallet
 
@@ -32,6 +34,26 @@ Simplicity and ease-of-use is **Litewallet**'s core design principle. A simple r
 - import [password protected](https://github.com/bitcoin/bips/blob/master/bip-0038.mediawiki) paper wallets
 - ["payment protocol"](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki) payee identity certification
 
+
+### Localization
+
+**Litewallet** is available in the following languages:
+
+- Chinese (Simplified and traditional)
+- Danish
+- Dutch
+- English
+- French
+- German
+- Italian
+- Japanese
+- Korean
+- Portuguese
+- Russian
+- Spanish
+- Swedish
+
+
 ### Building & Developing Litewallet for Android:
 
 1. Download and install Java 7 or up
@@ -47,3 +69,6 @@ $ git submodule update
 6. Change `Android NDK Location` with the path to NDK r15c that you downloaded earlier
 7. Go to SDK Manager and download all the SDK Platforms and SDK Tools
 9. Build -> Rebuild Project
+
+---
+**Litecoin** source code is available at https://github.com/litecoin-foundation
