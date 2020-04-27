@@ -44,6 +44,7 @@ Simplicity and ease-of-use is **Litewallet**'s core design principle. A simple r
 - English
 - French
 - German
+- Indonesian
 - Italian
 - Japanese
 - Korean
