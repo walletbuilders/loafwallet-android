@@ -77,4 +77,5 @@ $ git submodule update
 ### Litewallet Team:
 * [Development Code of Conduct](https://github.com/litecoin-foundation/litewallet/blob/master/DEVELOPMENT.md)
 ---
-**Litecoin** source code is available at https://github.com/litecoin-foundation
+**Litecoin** source code is available at https://github.com/litecoin-project/litecoin
+
