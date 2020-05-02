@@ -18,7 +18,7 @@ jobs:
           command: ./gradlew
       - run:
           name: Store Google Service Account
-          command: $GOOGLE_SERVICES_JSON > ${HOME}/app/google-service.json
+          command: echo $GOOGLE_SERVICES_JSON > ${HOME}/app/google-service.json
       - save_cache:
           paths:
             - ~/.gradle
