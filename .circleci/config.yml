@@ -15,7 +15,10 @@ jobs:
           command: sudo chmod +x ./gradlew
       - run:
           name: Download Dependencies
-          command: ./gradlew androidDependencies
+          command: ./gradlew
+      - run:
+          name: Store Google Service Account
+          command: $GOOGLE_SERVICES_JSON > ${HOME}/google-service.plist
       - save_cache:
           paths:
             - ~/.gradle
