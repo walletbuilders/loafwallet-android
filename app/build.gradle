@@ -26,6 +26,7 @@ android {
     compileSdkVersion = 29
     defaultConfig {
         testInstrumentationRunner = 'androidx.test.runner.AndroidJUnitRunner'
+ 
         applicationId = 'com.loafwallet'
         minSdkVersion 23
         targetSdkVersion 29
@@ -154,6 +155,7 @@ android {
 
     }
     compileSdkVersion 29
+    ndkVersion = '21.1.6352462'
 }
 
 task copyResDirectoryToClasses(type: Copy) {
@@ -197,6 +199,9 @@ dependencies {
     implementation 'junit:junit:4.12'
     implementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    // Fastlane
+    implementation 'tools.fastlane:screengrab:2.0.0'
+
     // add the Firebase SDK for Google Analytics
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
 
@@ -208,4 +213,5 @@ dependencies {
 
     // Timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
 }
