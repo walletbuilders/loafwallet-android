@@ -91,57 +91,57 @@ public class PlatformTests {
 //
 //    }
 
-    @Test
-    public void bundleExtractTest() {
-        APIClient apiClient = APIClient.getInstance(mActivityRule.getActivity());
+//    @Test
+//    public void bundleExtractTest() {
+//        APIClient apiClient = APIClient.getInstance(mActivityRule.getActivity());
+//
+//        Request request = new Request.Builder()
+//                .url(String.format("%s/assets/bundles/%s/download", BASE_URL, BREAD_POINT))
+//                .get().build();
+//
+//        Response response = null;
+//        response = apiClient.sendRequest(request, false, 0);
+//        try {
+//            apiClient.writeBundleToFile(response);
+//            String extractFolderName = apiClient.getExtractedPath(mActivityRule.getActivity(), null);
+//            apiClient.tryExtractTar();
+//            File temp = new File(extractFolderName);
+//            int filesExtracted = temp.listFiles().length;
+//            Log.e(TAG, "bundleExtractTest: filesExtracted: " + filesExtracted);
+//            Assert.assertNotSame(filesExtracted, 0);
+//            Log.e(TAG, "bundleExtractTest: ");
+//            if (temp.isDirectory()) {
+//                String[] children = temp.list();
+//                for (int i = 0; i < children.length; i++) {
+//                    new File(temp, children[i]).delete();
+//                }
+//            }
+//        } finally {
+//            response.close();
+//        }
+//    }
 
-        Request request = new Request.Builder()
-                .url(String.format("%s/assets/bundles/%s/download", BASE_URL, BREAD_POINT))
-                .get().build();
-
-        Response response = null;
-        response = apiClient.sendRequest(request, false, 0);
-        try {
-            apiClient.writeBundleToFile(response);
-            String extractFolderName = apiClient.getExtractedPath(mActivityRule.getActivity(), null);
-            apiClient.tryExtractTar();
-            File temp = new File(extractFolderName);
-            int filesExtracted = temp.listFiles().length;
-            Log.e(TAG, "bundleExtractTest: filesExtracted: " + filesExtracted);
-            Assert.assertNotSame(filesExtracted, 0);
-            Log.e(TAG, "bundleExtractTest: ");
-            if (temp.isDirectory()) {
-                String[] children = temp.list();
-                for (int i = 0; i < children.length; i++) {
-                    new File(temp, children[i]).delete();
-                }
-            }
-        } finally {
-            response.close();
-        }
-    }
-
-    @Test
-    public void bundleDownloadTest() {
-        APIClient apiClient = APIClient.getInstance(mActivityRule.getActivity());
-        Request request = new Request.Builder()
-                .get()
-                .url("https://s3.amazonaws.com/breadwallet-assets/bread-buy/7f5bc5c6cc005df224a6ea4567e508491acaffdc2e4769e5262a52f5b785e261.tar").build();
-        Response response = apiClient.sendRequest(request, false, 0);
-        try {
-            File bundleFile = new File(apiClient.getBundleResource(mActivityRule.getActivity(), BREAD_POINT + ".tar"));
-            apiClient.writeBundleToFile(response);
-            String latestVersion = apiClient.getLatestVersion();
-            Assert.assertNotNull(latestVersion);
-            String currentTarVersion = getCurrentVersion(bundleFile);
-            Log.e(TAG, "bundleUpdateTest: latestVersion: " + latestVersion + ", currentTarVersion: " + currentTarVersion);
-
-            Assert.assertNotNull(currentTarVersion);
-            Assert.assertNotEquals(latestVersion, currentTarVersion);
-        } finally {
-            response.close();
-        }
-    }
+//    @Test
+//    public void bundleDownloadTest() {
+//        APIClient apiClient = APIClient.getInstance(mActivityRule.getActivity());
+//        Request request = new Request.Builder()
+//                .get()
+//                .url("https://s3.amazonaws.com/breadwallet-assets/bread-buy/7f5bc5c6cc005df224a6ea4567e508491acaffdc2e4769e5262a52f5b785e261.tar").build();
+//        Response response = apiClient.sendRequest(request, false, 0);
+//        try {
+//            File bundleFile = new File(apiClient.getBundleResource(mActivityRule.getActivity(), BREAD_POINT + ".tar"));
+//            apiClient.writeBundleToFile(response);
+//            String latestVersion = apiClient.getLatestVersion();
+//            Assert.assertNotNull(latestVersion);
+//            String currentTarVersion = getCurrentVersion(bundleFile);
+//            Log.e(TAG, "bundleUpdateTest: latestVersion: " + latestVersion + ", currentTarVersion: " + currentTarVersion);
+//
+//            Assert.assertNotNull(currentTarVersion);
+//            Assert.assertNotEquals(latestVersion, currentTarVersion);
+//        } finally {
+//            response.close();
+//        }
+//    }
 
     @Test
     public void bundleUpdateTest() {
@@ -228,32 +228,32 @@ public class PlatformTests {
 //        Assert.assertNotEquals(token.length(), 0);
 //    }
 
-    @Test
-    public void testMeRequest() {
-        APIClient apiClient = APIClient.getInstance(mActivityRule.getActivity());
-        Response response = apiClient.buyBitcoinMe();
-        Assert.assertTrue(response.isSuccessful());
-        response.close();
-    }
+//    @Test
+//    public void testMeRequest() {
+//        APIClient apiClient = APIClient.getInstance(mActivityRule.getActivity());
+//        Response response = apiClient.buyBitcoinMe();
+//        Assert.assertTrue(response.isSuccessful());
+//        response.close();
+//    }
 
     // TODO: Refactor these tests to pass
 
-//    @Test
-//    public void testGZIP() {
-//        String data = "Ladies and Gentlemen of the class of '99: If I could offer you only one tip 11111111for the future, " +
-//                "sunscreen would be it.";
-//        Assert.assertFalse(BRCompressor.isGZIPStream(data.getBytes()));
-//        byte[] compressedData = BRCompressor.gZipCompress(data.getBytes());
-//        Assert.assertTrue(BRCompressor.isGZIPStream(compressedData));
-//        Log.e(TAG, "testGZIP: " + new String(compressedData));
-//        Assert.assertNotNull(compressedData);
-//        Assert.assertTrue(compressedData.length > 0);
-//        byte[] decompressedData = BRCompressor.gZipExtract(compressedData);
-//        Assert.assertFalse(BRCompressor.isGZIPStream(decompressedData));
-//        Assert.assertNotNull(decompressedData);
-//        Assert.assertEquals(new String(decompressedData), data);
-//        Assert.assertNotEquals(compressedData.length, decompressedData.length);
-//    }
+    @Test
+    public void testGZIP() {
+        String data = "Ladies and Gentlemen of the class of '99: If I could offer you only one tip 11111111for the future, " +
+                "sunscreen would be it.";
+        Assert.assertFalse(BRCompressor.isGZIPStream(data.getBytes()));
+        byte[] compressedData = BRCompressor.gZipCompress(data.getBytes());
+        Assert.assertTrue(BRCompressor.isGZIPStream(compressedData));
+        Log.e(TAG, "testGZIP: " + new String(compressedData));
+        Assert.assertNotNull(compressedData);
+        Assert.assertTrue(compressedData.length > 0);
+        byte[] decompressedData = BRCompressor.gZipExtract(compressedData);
+        Assert.assertFalse(BRCompressor.isGZIPStream(decompressedData));
+        Assert.assertNotNull(decompressedData);
+        Assert.assertEquals(new String(decompressedData), data);
+        Assert.assertNotEquals(compressedData.length, decompressedData.length);
+    }
 
     @Test
     public void testBZip2() {
@@ -273,22 +273,6 @@ public class PlatformTests {
         Assert.assertNotNull(decompressedData);
         Assert.assertEquals(new String(decompressedData), data);
         Assert.assertNotEquals(compressedData.length, decompressedData.length);
-    }
-
-    @Test
-    public void testBitIdSignature() {
-        BRKey key = new BRKey("c4c9b99b714074736b65d9faab39145949894233a09d8100b91104750a82d31f");
-        String message = "https://breadwallet.com/bitid?nonce=123456789";
-        String expectedSig = "ICWek6XEVxu/1/x+TtWk178t6uFcToH019RWNnS+JEeJOr2XGkZKQwsSqEvJ7l3sfhUoX1jm4uWP7nmlyG5Y10E=";
-        String sig = BRBitId.signMessage(message, key);
-        Log.e(TAG, "sig: " + sig);
-        String expectedAddress = "mjBrDFeeX9moESGiRZZGeYrsUSNuvgwDVV";
-        String address = key.address();
-        Log.e(TAG, "address: " + address);
-        Assert.assertEquals(expectedAddress, address);
-        Assert.assertNotNull(sig);
-        Assert.assertEquals(expectedSig.length(), sig.length());
-        Assert.assertEquals(expectedSig, sig);
     }
 
 }
