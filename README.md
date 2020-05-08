@@ -58,7 +58,9 @@ Simplicity and ease-of-use is **Litewallet**'s core design principle. A simple r
 [![GitHub issues](https://img.shields.io/github/issues/litecoin-foundation/loafwallet-android?style=plastic)](https://github.com/litecoin-foundation/loafwallet-android/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/litecoin-foundation/loafwallet-android?color=00ff00&style=plastic)](https://github.com/litecoin-foundation/loafwallet-android/pulls)
 
-### Building & Developing Litewallet for Android: 
+### [Changelog](/Changelog.md)
+
+### Building & Developing Litewallet for Android
 
 1. Download and install Java 7 or up
 2. Download and install the latest Android studio
