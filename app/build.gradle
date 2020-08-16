@@ -36,8 +36,8 @@ android {
         applicationId = 'com.loafwallet'
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 616
-        versionName "v2.0.0"
+        versionCode 625
+        versionName "v2.0.1"
         multiDexEnabled true
 
         // Similar to other properties in the defaultConfig block,
@@ -165,7 +165,7 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-    ndkVersion '21.1.6352462'
+    //ndkVersion '21.1.6352462'
 }
 
 task copyResDirectoryToClasses(type: Copy) {
