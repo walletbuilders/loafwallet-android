@@ -1,5 +1,6 @@
 version: 2
-
+# References are blocks of configurations that we can reference and reuse.
+references:
   # ---------------------------------------------------------------------------------------------------------------------
   # DECODE FIREBASE GOOGLE_SERVICE_JSON FILE AND WRITE IT TO A FILE
   # ---------------------------------------------------------------------------------------------------------------------
